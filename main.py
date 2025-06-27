@@ -1,9 +1,11 @@
 import random
-import matplotlib.pyplot as plt
 import movie_storage_sql as storage
 import requests
+from dotenv import load_dotenv
+import os
 
-omdb_key = "7f721055"
+load_dotenv()
+omdb_key = os.getenv("OMDB_API_KEY")
 
 # this works: https://www.omdbapi.com/?t=inception&apikey=7f721055
 def get_movie_detials_by_title(title):
